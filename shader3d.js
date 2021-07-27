@@ -77,7 +77,8 @@ function setup() {
   imgCompose = createImage(w2d, h2d);
 
   // game
-  isGame = showDebug = false;
+  isGame = false;
+  showDebug = true;
   title = createDiv('Me, Meow, <br>Multidimentional <br>Monstrousness');
   title.id('title');
   title.style('font-family', 'Helvetica');
@@ -206,12 +207,12 @@ function draw() {
       curIso += easedStep;
     }
     if (mouseIsPressed === true) {
-      onButtonConnectToSerialDevice();
+      // disable
+      // onButtonConnectToSerialDevice();
     }
     curIso = Math.max(-2.3, Math.min(curIso, 4.0));
     if (keyIsPressed | isSerialReceived === true) {
       classify();
-
     }
 
     // level update
